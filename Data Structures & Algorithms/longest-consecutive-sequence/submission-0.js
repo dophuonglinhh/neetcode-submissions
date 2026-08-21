@@ -8,6 +8,7 @@ class Solution {
         let maxLength = 0; 
 
         for (let num of nums) {
+            // find starting point of sequence
             if (set.has(num - 1)) {
                 continue;
             }
