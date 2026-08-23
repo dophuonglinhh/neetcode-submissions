@@ -5,18 +5,18 @@ class Solution {
      * @return {number}
      */
     search(nums, target) {
-        let low = 0;
-        let high = nums.length - 1;
+        let left = 0;
+        let right = nums.length - 1;
 
-        while (low <= high) {
-            const mid = low + Math.floor((high - low)/2);
+        while (left <= right) {
+            const mid = Math.floor((left + right)/2);
 
             if (nums[mid] === target) {
                 return mid;
             } else if (nums[mid] > target) {
-                high = mid - 1;
+                right = mid - 1;
             } else {
-                low = mid + 1;
+                left = mid + 1;
             }
         }
 
