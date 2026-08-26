@@ -7,15 +7,15 @@ class Solution {
         const set = new Set(nums);
         let maxLength = 0; 
 
-        for (let num of nums) {
+        for (let num of set) {
+            // find starting point of sequence
             if (set.has(num - 1)) {
                 continue;
             }
 
             let length = 1;
-            while (set.has(num + 1)) {
+            while (set.has(num + length)) {
                 length++;
-                num++;
             }
 
             maxLength = Math.max(length, maxLength);
